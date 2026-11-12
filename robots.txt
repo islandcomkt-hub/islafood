@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://islafood.vercel.app/sitemap.xml
+Sitemap: https://islafood-theta.vercel.app/sitemap.xml
