@@ -274,6 +274,7 @@ section{position:relative}
 .nums div:last-child{border-right:0}
 .nums .n{font:900 clamp(56px,7vw,104px)/1 var(--display);letter-spacing:-.04em;color:var(--text);font-variant-numeric:tabular-nums}
 .nums .n.r{color:var(--red)}
+.nums div.n{border-right:0;padding:0}
 .nums p{color:var(--mute);font-size:15px;margin-top:12px;max-width:22ch}
 
 /* orçamento */
@@ -345,6 +346,29 @@ section[id]{scroll-margin-top:118px}
 @media (max-width:980px){.segs{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.segs{grid-template-columns:1fr}}
 
+/* celular: textos centralizados */
+@media (max-width:700px){
+  .hero .wrap > div:first-child{text-align:center}
+  .hero .lede{margin-inline:auto}
+  .hero .ctas,.hero .meta{justify-content:center}
+  .hero .ctas .btn{width:100%;justify-content:center}
+  .kicker{justify-content:center;text-align:center}
+  .h2,.sub,.note{text-align:center;margin-inline:auto}
+  .note{border-left:0;padding-left:0;border-top:3px solid var(--flame);padding-top:14px}
+  .cta-row{flex-direction:column;justify-content:center;text-align:center}
+  .cta-row .btn{width:100%;justify-content:center}
+  .step{text-align:center;align-items:center}
+  .step .jmob{margin-inline:auto}
+  .step .crops{justify-content:center}
+  .feat .list{text-align:left}
+  .nums > div,.fact{text-align:center}
+  .nums > div{padding:28px 10px 12px}
+  .nums p{margin-inline:auto}
+  .final .wrap{text-align:center;justify-items:center}
+  .segs li{text-align:center}
+  footer .wrap{justify-content:center;text-align:center}
+}
+
 /* faq */
 .faq{display:grid;gap:0;margin-top:44px;border-top:1px solid var(--line);max-width:900px}
 .faq details{border-bottom:1px solid var(--line)}
@@ -395,6 +419,11 @@ footer img{height:24px!important;width:auto}
   .dev.phone{width:150px;border-radius:30px;padding:7px}.dev.phone video{border-radius:24px}
   .dev.laptop{width:300px}
   .stage .p1{left:-4%;top:170px}.stage .p2{right:-4%;top:190px}
+  .stage{height:470px;margin-top:8px}
+  .chip{font-size:11px;padding:6px 9px;z-index:3}
+  .stage .c1{left:4%;top:0}
+  .stage .c2{right:2%;top:118px}
+  .stage .c3{left:50%;bottom:6px;margin-left:-84px}
   .mods,.fields,.facts{grid-template-columns:1fr}
   .status li span{display:none}
   .node{width:96px;font-size:12px}.node .dot{width:50px;height:50px;border-radius:16px}.node .dot svg{width:24px;height:24px}
@@ -459,7 +488,7 @@ footer img{height:24px!important;width:auto}
   <div class="wrap">
     <div>
       <h1><span class="seo">Sistema para lanchonete, hamburgueria, pizzaria, restaurante e açaí</span><span class="ln"><span>Seu delivery</span></span><span class="ln"><span>Sua marca</span></span><span class="ln"><span>Seu dinheiro</span></span></h1>
-      <p class="lede">Site de pedidos, painel de controle, cozinha, despacho, entregas e pedido de mesa num ecossistema só, com a marca da sua lanchonete ou restaurante. <strong>Implementação de baixo custo e nenhuma taxa por pedido.</strong></p>
+      <p class="lede">Site de pedidos, painel, cozinha, entregas e pedido de mesa num sistema só, com a sua marca. <strong>Baixo custo e nenhuma taxa por pedido.</strong></p>
       <div class="ctas">
         <a class="btn btn-red" href="#orcamento">Criar meu orçamento <svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#jornada">Ver como funciona</a>
@@ -488,7 +517,7 @@ footer img{height:24px!important;width:auto}
   <div class="wrap">
     <p class="kicker"><em>01</em> Por que Isla Food</p>
     <h2 class="h2" data-r>Pare de juntar ferramentas, <span class="red">centralize a operação</span></h2>
-    <p class="sub" data-r>Quem contrata um site para a lanchonete costuma precisar de outro sistema para os pedidos, outro para a nota fiscal e um grupo de WhatsApp para as entregas. O Isla Food junta tudo isso num lugar só, feito para a sua loja.</p>
+    <p class="sub" data-r>Site num lugar, pedidos em outro, nota fiscal em outro e entregas no WhatsApp. O Isla Food junta tudo num sistema só.</p>
     <div class="vs">
       <div class="col" data-r="left">
         <h3>Montando por partes</h3>
@@ -557,33 +586,33 @@ footer img{height:24px!important;width:auto}
           <img class="jmob" src="media/j_paga.jpg" alt="Pagamento do pedido por Pix, cartão ou dinheiro" loading="lazy">
           <p class="mono">20:41 · Recebido</p>
           <h3>E paga como quiser</h3>
-          <p>Pix, cartão na maquininha ou dinheiro com troco. O cliente informa o endereço e confere tudo antes de confirmar.</p>
+          <p>Pix, cartão ou dinheiro com troco. O cliente confere tudo antes de confirmar.</p>
           <div class="crops"><img src="img/pix.png" alt="Opção Pix na entrega" width="330" height="172"><img src="img/cartao.png" alt="Opção cartão na entrega" width="334" height="172"><img src="img/dinheiro.png" alt="Opção dinheiro, selecionada" width="346" height="152"></div>
         </article>
         <article class="step" data-v="j_painel" data-f="laptop" data-s="2">
           <img class="jmob" src="media/j_painel.jpg" alt="Pedido chegando no painel da loja" loading="lazy">
           <p class="mono">20:42 · Aceito → Em preparo</p>
           <h3>O pedido apita no painel da loja</h3>
-          <p>A cozinha aceita, prepara e libera o pedido completo. Na hora de aceitar, sai a comanda da cozinha junto com a guia do entregador, numa nota só, em qualquer impressora térmica.</p>
+          <p>A cozinha aceita e já sai a comanda junto com a guia do entregador, numa nota só.</p>
         </article>
         <article class="step" data-v="j_fila" data-f="phone" data-s="3">
           <img class="jmob" src="media/j_fila.jpg" alt="Corrida enviada para o entregador da vez no app" loading="lazy">
           <p class="mono">20:46 · Pronto</p>
           <h3>A corrida vai para o entregador da vez</h3>
-          <p>Quem chega a até 300 m da loja entra na fila, por ordem de chegada. O convite dura 1 minuto e mostra o ganho da corrida antes de aceitar.</p>
+          <p>Quem está a até 300 m da loja entra na fila. O convite dura 1 minuto e já mostra o ganho.</p>
         </article>
         <article class="step" data-v="j_rota" data-f="phone" data-s="4">
           <img class="jmob" src="media/j_rota.jpg" alt="Entregador abrindo a rota no Waze ou Google Maps" loading="lazy">
           <p class="mono">20:47 · A caminho</p>
           <h3>Coleta confirmada, rota aberta</h3>
-          <p>O entregador confirma a coleta com o código do pedido e a rota abre direto no Waze ou no Google Maps, sem digitar endereço.</p>
+          <p>Coleta confirmada com o código do pedido e rota aberta no Waze ou no Google Maps.</p>
           <div class="crops"><img src="img/waze.png" alt="Abrir rota no Waze" width="662" height="113" style="height:56px"><img src="img/maps.png" alt="Abrir rota no Google Maps" width="662" height="113" style="height:56px"></div>
         </article>
         <article class="step" data-v="j_mapa" data-f="phone" data-s="5">
           <img class="jmob" src="media/j_mapa.jpg" alt="Cliente acompanhando a moto no mapa até a entrega" loading="lazy">
           <p class="mono">20:49 · Entregue</p>
           <h3>O cliente vê a moto chegando e passa o código na porta</h3>
-          <p>O acompanhamento mostra o lanche ao vivo da chapa, a moto no mapa e o código de recebimento. Entrega confirmada só com o código certo.</p>
+          <p>O cliente vê o preparo ao vivo, a moto no mapa e recebe com o código de entrega.</p>
         </article>
       </div>
     </div>
@@ -679,7 +708,7 @@ footer img{height:24px!important;width:auto}
     <div>
       <p class="kicker"><em>07</em> Pedido de mesa <span class="tag" style="font:600 10px var(--mono);background:var(--flame);color:#111;padding:3px 7px;border-radius:5px">sob medida</span></p>
       <h2 class="h2" data-r>Do salão para a cozinha, <span class="red">sem papelzinho</span></h2>
-      <p class="sub" data-r>Montamos o módulo de mesa para o seu salão: o cliente lê o QR code, pede pelo cardápio da loja e o pedido cai no mesmo painel do delivery.</p>
+      <p class="sub" data-r>O cliente lê o QR code da mesa, pede pelo cardápio e o pedido cai no mesmo painel do delivery.</p>
       <div class="flow">
         <div data-r><span class="mono">01</span><b>Cliente lê o QR da mesa</b></div>
         <div data-r><span class="mono">02</span><b>Pede pelo cardápio</b></div>
@@ -696,7 +725,7 @@ footer img{height:24px!important;width:auto}
   <div class="wrap">
     <p class="kicker"><em>08</em> Quanto custa</p>
     <h2 class="h2" data-r>Nenhuma taxa por pedido, <span class="red">só no saque</span></h2>
-    <p class="sub" data-r>A implementação tem custo baixo comparado ao mercado e é orçada para a sua operação. Depois, você não paga nada por pedido: a única taxa é sobre o valor que você saca, e quem escolhe o ritmo é você.</p>
+    <p class="sub" data-r>Implementação de baixo custo e nada por pedido. A única taxa é no saque, no ritmo que você escolher.</p>
     <div class="rates" role="radiogroup" aria-label="Modalidade de saque">
       <button class="rate" type="button" role="radio" aria-checked="false" data-r data-rate="0.0049" data-min="0"><span class="mono">A cada 30 dias</span><b>Mensal</b><em>0,49%</em></button>
       <button class="rate" type="button" role="radio" aria-checked="false" data-r data-rate="0.0079" data-min="0"><span class="mono">A cada 15 dias</span><b>Quinzenal</b><em>0,79%</em></button>
@@ -740,7 +769,7 @@ footer img{height:24px!important;width:auto}
   <div class="wrap">
     <p class="kicker"><em>10</em> Para quem é</p>
     <h2 class="h2" data-r>Um sistema para cada <span class="red">tipo de cozinha</span></h2>
-    <p class="sub" data-r>Sistema de delivery próprio, cardápio digital, painel de pedidos e app de entrega para quem vende comida. Feito para negócios pequenos e médios que querem sair da bagunça de várias ferramentas, sem pagar taxa por pedido nem mensalidade.</p>
+    <p class="sub" data-r>Delivery próprio, cardápio digital, painel de pedidos e app de entrega para negócios pequenos e médios. Sem taxa por pedido e sem mensalidade.</p>
     <ul class="segs">
         <li data-r><h3>Sistema para lanchonete</h3><p>Cardápio digital, montagem do lanche e pedidos organizados sem depender só do WhatsApp.</p></li>
         <li data-r><h3>Sistema para hamburgueria</h3><p>Adicionais por camada, chapa no ritmo do painel e entrega com código de confirmação.</p></li>
@@ -757,7 +786,7 @@ footer img{height:24px!important;width:auto}
   <div class="wrap">
     <p class="kicker"><em style="color:var(--red)">11</em> Orçamento exclusivo</p>
     <h2 class="h2" style="color:#151311" data-r>Monte o seu <span class="red">ecossistema</span></h2>
-    <p class="sub" data-r>A estrutura é própria e montada para a sua operação. Marque as peças, clique em enviar e o seu orçamento chega pronto no nosso WhatsApp.</p>
+    <p class="sub" data-r>Marque as peças e envie: o orçamento chega pronto no nosso WhatsApp.</p>
     <div class="qgrid">
       <form class="qform" id="qform" novalidate>
         <fieldset>
@@ -927,11 +956,11 @@ document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
 /* ---------- loop de animação (rolagem + ponteiro) ---------- */
 let sy = scrollY;
 function frame(now) {
-  const y = scrollY, H = document.documentElement.scrollHeight - innerHeight;
+  const y = scrollY, H = document.documentElement.scrollHeight - innerHeight; const small = innerWidth <= 980;
   // hero: aparelhos em camadas
   if (!reduce && y < innerHeight * 1.3) stage.querySelectorAll('[data-depth]').forEach(el => { const d = +el.dataset.depth;
     const base = el.classList.contains('laptop') ? 'translateX(-50%) rotateX(8deg)' : el.classList.contains('p1') ? 'rotateY(14deg) rotateZ(-4deg)' : el.classList.contains('p2') ? 'rotateY(-14deg) rotateZ(4deg)' : el.classList.contains('c1') ? 'rotate(-4deg)' : el.classList.contains('c2') ? 'rotate(3deg)' : 'rotate(-2deg)';
-    el.style.transform = `translate3d(${mx * d}px,${my * d - y * d / 90}px,0) ${base} rotateY(${mx * 6}deg)`; });
+    el.style.transform = small ? `translate3d(0,${-Math.min(y, 300) * d / 600}px,0) ${base}` : `translate3d(${mx * d}px,${my * d - y * d / 90}px,0) ${base} rotateY(${mx * 6}deg)`; });
   // faixa vermelha acelera com a rolagem
   // status: 6 etapas ao longo da página
   const p = H > 0 ? y / H : 0; fill.style.width = (p * 100) + '%'; const k = Math.min(5, Math.floor(p * 6.2)); sb.forEach((li, i) => li.classList.toggle('on', i <= k));
