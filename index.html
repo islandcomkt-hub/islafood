@@ -288,7 +288,7 @@ section{position:relative}
 .mods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .mod{position:relative}
 .mod input{position:absolute;opacity:0;pointer-events:none}
-.mod label{display:grid;grid-template-columns:28px 1fr 64px;align-items:center;gap:12px;padding:16px;border-radius:16px;background:#fff;border:1.5px solid #e2dbd0;cursor:pointer;transition:border-color .2s,transform .3s var(--ease),background .2s;height:100%}
+.mod label{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:12px;padding:16px;border-radius:16px;background:#fff;border:1.5px solid #e2dbd0;cursor:pointer;transition:border-color .2s,transform .3s var(--ease),background .2s;height:100%}
 .mod label:hover{transform:translateY(-2px)}
 .mod .box{width:24px;height:24px;border-radius:7px;border:2px solid #bdb4a8;display:grid;place-items:center;transition:background .2s,border-color .2s}
 .mod .box svg{width:14px;height:14px;color:#fff;opacity:0;transform:scale(.4);transition:opacity .2s,transform .35s var(--ease)}
@@ -335,9 +335,12 @@ section[id]{scroll-margin-top:118px}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .receipt .warn{color:var(--red);font-size:13px;text-align:center;margin-top:8px;min-height:1em}
 .mod .tag{white-space:nowrap}
-.mod .thumb{width:64px!important;height:64px!important;border-radius:12px;object-fit:cover;box-shadow:0 0 0 1px #e2dbd0;filter:saturate(.85);transition:transform .35s var(--ease),filter .3s}
-.mod label:hover .thumb,.mod input:checked+label .thumb{transform:scale(1.06) rotate(-2deg);filter:none}
-.mod input:checked+label .thumb{box-shadow:0 0 0 2px var(--red)}
+.mod label.l{grid-template-columns:40px 28px 1fr}
+.mod label.r{grid-template-columns:28px 1fr 40px}
+.mod .ico{width:36px;height:36px;color:#151311;opacity:.45;transition:color .25s,opacity .25s,transform .4s var(--ease)}
+.mod label.r .ico{justify-self:end}
+.mod label:hover .ico{opacity:.8;transform:translateY(-2px)}
+.mod input:checked+label .ico{color:var(--red);opacity:1}
 .final .alt{display:inline-block;margin-top:14px;color:#fff;font-weight:600;font-size:16px}
 
 /* para quem é */
@@ -453,7 +456,7 @@ footer img{height:24px!important;width:auto}
   <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3.5h10V8M7 17H4.5V9.5a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5V17H17M7 13.5h10V21H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3M4 7.5V18a2 2 0 0 0 2 2h14V8H6.5A2.5 2.5 0 0 1 4 7.5Zm12 6.5h1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></symbol>
-  <symbol id="i-zero" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 15.5l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 5h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.8 12.2a3.2 2.4 0 0 1 6.4 0Z M8.6 13.6h6.8 M8.8 15c0 1 .8 1.4 1.6 1.4h3.2c.8 0 1.6-.4 1.6-1.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 14h2.5v2.5H14zM17.5 17.5H20V20h-2.5zM14 18.5v1.5M18.5 14H20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8.5L19 7.5V21H6z M14.5 3v4.5H19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 11.5h7M9 14.5h7M9 17.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol><symbol id="i-zero" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 15.5l7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
 </svg>
 
 <header class="nav">
@@ -1006,7 +1009,10 @@ const QM = [
   ['nf', 'Nota fiscal por pedido', 'Emissão integrada ao painel', false, 'sob consulta'],
 ];
 const mods = document.getElementById('mods');
-mods.innerHTML = QM.map(([k, t, s, on, tag]) => `<div class="mod"><input type="checkbox" id="m-${k}" value="${k}" ${on ? 'checked' : ''}><label for="m-${k}"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>${t}${tag ? `<span class="tag">${tag}</span>` : ''}</b><small>${s}</small></span><img class="thumb" src="img/mods/${k}.jpg" alt="" width="160" height="160" loading="lazy"></label></div>`).join('');
+const ICO = { site: 'i-phone', pedidos: 'i-board', controle: 'i-wallet', entregador: 'i-moto', impressao: 'i-print', mesa: 'i-qr', nf: 'i-doc' };
+mods.innerHTML = QM.map(([k, t, s, on, tag], i) => { const side = i % 2 ? 'r' : 'l'; const ico = `<svg class="ico" aria-hidden="true"><use href="#${ICO[k]}"/></svg>`;
+  const box = `<span class="box"><svg><use href="#i-ok"/></svg></span>`, txt = `<span><b>${t}${tag ? `<span class="tag">${tag}</span>` : ''}</b><small>${s}</small></span>`;
+  return `<div class="mod"><input type="checkbox" id="m-${k}" value="${k}" ${on ? 'checked' : ''}><label class="${side}" for="m-${k}">${side === 'l' ? ico + box + txt : box + txt + ico}</label></div>`; }).join('');
 const seg = (id, name, opts, def) => { document.getElementById(id).innerHTML = opts.map((o, i) => `<input type="radio" name="${name}" id="${name}-${i}" value="${o}" ${o === def ? 'checked' : ''}><label for="${name}-${i}">${o}</label>`).join(''); };
 seg('tipo', 'tipo', ['Lanchonete', 'Hamburgueria', 'Pizzaria', 'Restaurante', 'Açaí e doces'], 'Hamburgueria');
 seg('vol', 'vol', ['Até 50', '50 a 150', '150 a 400', 'Mais de 400'], '50 a 150');
