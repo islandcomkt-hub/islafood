@@ -288,7 +288,7 @@ section{position:relative}
 .mods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .mod{position:relative}
 .mod input{position:absolute;opacity:0;pointer-events:none}
-.mod label{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:16px;border-radius:16px;background:#fff;border:1.5px solid #e2dbd0;cursor:pointer;transition:border-color .2s,transform .3s var(--ease),background .2s;height:100%}
+.mod label{display:grid;grid-template-columns:28px 1fr 64px;align-items:center;gap:12px;padding:16px;border-radius:16px;background:#fff;border:1.5px solid #e2dbd0;cursor:pointer;transition:border-color .2s,transform .3s var(--ease),background .2s;height:100%}
 .mod label:hover{transform:translateY(-2px)}
 .mod .box{width:24px;height:24px;border-radius:7px;border:2px solid #bdb4a8;display:grid;place-items:center;transition:background .2s,border-color .2s}
 .mod .box svg{width:14px;height:14px;color:#fff;opacity:0;transform:scale(.4);transition:opacity .2s,transform .35s var(--ease)}
@@ -335,6 +335,9 @@ section[id]{scroll-margin-top:118px}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .receipt .warn{color:var(--red);font-size:13px;text-align:center;margin-top:8px;min-height:1em}
 .mod .tag{white-space:nowrap}
+.mod .thumb{width:64px!important;height:64px!important;border-radius:12px;object-fit:cover;box-shadow:0 0 0 1px #e2dbd0;filter:saturate(.85);transition:transform .35s var(--ease),filter .3s}
+.mod label:hover .thumb,.mod input:checked+label .thumb{transform:scale(1.06) rotate(-2deg);filter:none}
+.mod input:checked+label .thumb{box-shadow:0 0 0 2px var(--red)}
 .final .alt{display:inline-block;margin-top:14px;color:#fff;font-weight:600;font-size:16px}
 
 /* para quem é */
@@ -1003,7 +1006,7 @@ const QM = [
   ['nf', 'Nota fiscal por pedido', 'Emissão integrada ao painel', false, 'sob consulta'],
 ];
 const mods = document.getElementById('mods');
-mods.innerHTML = QM.map(([k, t, s, on, tag]) => `<div class="mod"><input type="checkbox" id="m-${k}" value="${k}" ${on ? 'checked' : ''}><label for="m-${k}"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>${t}${tag ? `<span class="tag">${tag}</span>` : ''}</b><small>${s}</small></span></label></div>`).join('');
+mods.innerHTML = QM.map(([k, t, s, on, tag]) => `<div class="mod"><input type="checkbox" id="m-${k}" value="${k}" ${on ? 'checked' : ''}><label for="m-${k}"><span class="box"><svg><use href="#i-ok"/></svg></span><span><b>${t}${tag ? `<span class="tag">${tag}</span>` : ''}</b><small>${s}</small></span><img class="thumb" src="img/mods/${k}.jpg" alt="" width="160" height="160" loading="lazy"></label></div>`).join('');
 const seg = (id, name, opts, def) => { document.getElementById(id).innerHTML = opts.map((o, i) => `<input type="radio" name="${name}" id="${name}-${i}" value="${o}" ${o === def ? 'checked' : ''}><label for="${name}-${i}">${o}</label>`).join(''); };
 seg('tipo', 'tipo', ['Lanchonete', 'Hamburgueria', 'Pizzaria', 'Restaurante', 'Açaí e doces'], 'Hamburgueria');
 seg('vol', 'vol', ['Até 50', '50 a 150', '150 a 400', 'Mais de 400'], '50 a 150');
