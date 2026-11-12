@@ -433,7 +433,8 @@ footer img{height:24px!important;width:auto}
   .step{min-height:0;padding:34px 0}
   .step h3{color:var(--text)}
   .jmob{display:block;width:min(260px,70vw);border-radius:26px;border:8px solid #111;box-shadow:0 0 0 2px #2c2925,0 30px 60px rgba(0,0,0,.5);margin-bottom:22px}
-  .step[data-f="laptop"] .jmob{width:100%;border-radius:14px}
+  .jmob{aspect-ratio:540/1170;object-fit:cover;background:#111}
+  .step[data-f="laptop"] .jmob{width:100%;border-radius:14px;aspect-ratio:16/10}
   .nums{grid-template-columns:1fr 1fr}
   .rates{grid-template-columns:1fr 1fr}
   .sim-res{grid-template-columns:1fr}
@@ -609,39 +610,39 @@ footer img{height:24px!important;width:auto}
       </div>
       <div class="steps" id="steps">
         <article class="step on" data-v="j_monta" data-f="phone" data-s="0">
-          <img class="jmob" src="media/j_monta.jpg" alt="Cliente montando o lanche no site de pedidos da lanchonete" loading="lazy">
+          <video class="jmob" data-lazy="media/j_monta.mp4" poster="media/j_monta.jpg" muted loop playsinline preload="none" aria-label="Cliente montando o lanche no site de pedidos da lanchonete"></video>
           <p class="mono">20:39 · Recebido</p>
           <h3>O cliente monta o lanche camada por camada</h3>
           <p>Escolhe o lanche, tira o que não quer, adiciona bebida e acompanhamento. Tudo no site da sua loja, com o seu cardápio e os seus preços.</p>
         </article>
         <article class="step" data-v="j_paga" data-f="phone" data-s="0">
-          <img class="jmob" src="media/j_paga.jpg" alt="Pagamento do pedido por Pix, cartão ou dinheiro" loading="lazy">
+          <video class="jmob" data-lazy="media/j_paga.mp4" poster="media/j_paga.jpg" muted loop playsinline preload="none" aria-label="Pagamento do pedido por Pix, cartão ou dinheiro"></video>
           <p class="mono">20:41 · Recebido</p>
           <h3>E paga como quiser</h3>
           <p>Pix, cartão ou dinheiro com troco. O cliente confere tudo antes de confirmar.</p>
           <div class="crops"><img src="img/pix.png" alt="Opção Pix na entrega" width="330" height="172"><img src="img/cartao.png" alt="Opção cartão na entrega" width="334" height="172"><img src="img/dinheiro.png" alt="Opção dinheiro, selecionada" width="346" height="152"></div>
         </article>
         <article class="step" data-v="j_painel" data-f="laptop" data-s="2">
-          <img class="jmob" src="media/j_painel.jpg" alt="Pedido chegando no painel da loja" loading="lazy">
+          <video class="jmob" data-lazy="media/j_painel.mp4" poster="media/j_painel.jpg" muted loop playsinline preload="none" aria-label="Pedido chegando no painel da loja"></video>
           <p class="mono">20:42 · Aceito → Em preparo</p>
           <h3>O pedido apita no painel da loja</h3>
           <p>A cozinha aceita e já sai a comanda junto com a guia do entregador, numa nota só.</p>
         </article>
         <article class="step" data-v="j_fila" data-f="phone" data-s="3">
-          <img class="jmob" src="media/j_fila.jpg" alt="Corrida enviada para o entregador da vez no app" loading="lazy">
+          <video class="jmob" data-lazy="media/j_fila.mp4" poster="media/j_fila.jpg" muted loop playsinline preload="none" aria-label="Corrida enviada para o entregador da vez no app"></video>
           <p class="mono">20:46 · Pronto</p>
           <h3>A corrida vai para o entregador da vez</h3>
           <p>Quem está a até 300 m da loja entra na fila. O convite dura 1 minuto e já mostra o ganho.</p>
         </article>
         <article class="step" data-v="j_rota" data-f="phone" data-s="4">
-          <img class="jmob" src="media/j_rota.jpg" alt="Entregador abrindo a rota no Waze ou Google Maps" loading="lazy">
+          <video class="jmob" data-lazy="media/j_rota.mp4" poster="media/j_rota.jpg" muted loop playsinline preload="none" aria-label="Entregador abrindo a rota no Waze ou Google Maps"></video>
           <p class="mono">20:47 · A caminho</p>
           <h3>Coleta confirmada, rota aberta</h3>
           <p>Coleta confirmada com o código do pedido e rota aberta no Waze ou no Google Maps.</p>
           <div class="crops"><img src="img/waze.png" alt="Abrir rota no Waze" width="662" height="113" style="height:56px"><img src="img/maps.png" alt="Abrir rota no Google Maps" width="662" height="113" style="height:56px"></div>
         </article>
         <article class="step" data-v="j_mapa" data-f="phone" data-s="5">
-          <img class="jmob" src="media/j_mapa.jpg" alt="Cliente acompanhando a moto no mapa até a entrega" loading="lazy">
+          <video class="jmob" data-lazy="media/j_mapa.mp4" poster="media/j_mapa.jpg" muted loop playsinline preload="none" aria-label="Cliente acompanhando a moto no mapa até a entrega"></video>
           <p class="mono">20:49 · Entregue</p>
           <h3>O cliente vê a moto chegando e passa o código na porta</h3>
           <p>O cliente vê o preparo ao vivo, a moto no mapa e recebe com o código de entrega.</p>
